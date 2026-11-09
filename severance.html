@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <title>퇴직금 계산기 2026 | 근로기준법 평균임금 & 퇴직소득세·IRP 절세 계산 - 데이터라이터</title>
+  <meta name="description" content="근로기준법 기준 1일 평균임금과 재직일수로 법정 퇴직금을 즉시 계산합니다. 2026년 개정 퇴직소득세 및 IRP(개인형 퇴직연금) 이전 시 30~40% 절세 혜택까지 한눈에 확인하세요.">
+  <link rel="canonical" href="https://www.datawriter.co.kr/severance.html">
+  <meta name="robots" content="index, follow, max-snippet:-1">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="데이터라이터">
+  <meta property="og:title" content="퇴직금 계산기 2026 - 데이터라이터">
+  <meta property="og:description" content="입사일·퇴사일과 최근 3개월 급여로 법정 퇴직금과 퇴직소득세, IRP 절세액을 바로 계산해 보세요.">
+  <meta property="og:url" content="https://www.datawriter.co.kr/severance.html">
+  <meta property="og:image" content="https://www.datawriter.co.kr/assets/icon.svg">
+  <meta property="og:locale" content="ko_KR">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5159285704643995" crossorigin="anonymous"></script>
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "퇴직금 계산기 2026",
+        "url": "https://www.datawriter.co.kr/severance.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "inLanguage": "ko-KR",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "퇴직금 지급 요건은 무엇인가요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "근로기준법상 계속근로기간이 1년 이상이고, 4주간을 평균하여 1주 소정근로시간이 15시간 이상인 근로자는 정규직·계약직·아르바이트 구분 없이 누구나 퇴직금을 받을 수 있습니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "퇴직연금 IRP 계좌로 받으면 어떤 절세 혜택이 있나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "퇴직금을 일반 통장이 아닌 IRP(개인형 퇴직연금) 계좌로 이전하고 만 55세 이후 연금으로 수령하면, 퇴직소득세의 30%(10년 초과 수령 시 40%)를 감면받을 수 있습니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "퇴직금은 언제까지 지급되어야 하나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "근로기준법 제36조에 따라 퇴직일로부터 14일 이내에 전액 지급되어야 합니다. 특별한 사정이 있는 경우 당사자 합의로 지급 기일을 연장할 수 있습니다." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="./assets/icon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .date-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .date-row label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink-3);
+      margin-bottom: 6px;
+    }
+    .date-row input[type="date"] {
+      width: 100%;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font: inherit;
+      font-size: 0.92rem;
+      color: var(--ink);
+      background: var(--surface);
+      outline: none;
+    }
+    .date-row input[type="date"]:focus {
+      border-color: var(--brand);
+    }
+    .irp-card {
+      margin-top: 18px;
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .irp-card h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #15803D;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    .irp-card p {
+      font-size: 0.85rem;
+      color: #166534;
+      line-height: 1.55;
+    }
+    .irp-card b {
+      color: #14532D;
+      font-weight: 800;
+    }
+    .notice-box {
+      margin-top: 14px;
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 0.84rem;
+      color: #92400E;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./" class="logo" aria-label="데이터라이터 홈">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 12V7M8 12V4M13 12V9" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        데이터라이터
+      </a>
+      <nav class="gnb" aria-label="주요 메뉴">
+        <a href="./">연봉 실수령액</a>
+        <a href="./severance.html" class="is-active">퇴직금 &amp; IRP</a>
+        <a href="#rules">법정 퇴직금 기준</a>
+        <a href="#irp-guide">IRP 절세 가이드</a>
+        <a href="#faq">자주 묻는 질문</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="page-head">
+      <p class="breadcrumb">홈 &rsaquo; 급여·세금</p>
+      <h1 class="page-title">퇴직금 &amp; IRP 절세 계산기</h1>
+      <p class="page-lead">입사일·퇴사일과 급여를 입력하면 법정 퇴직금과 세금을 즉시 계산합니다. IRP(개인형 퇴직연금)로 수령할 때 아낄 수 있는 절세액도 함께 확인하세요.</p>
+      <div class="meta-line">
+        <span>근거 <strong>근로자퇴직급여 보장법</strong></span>
+        <span>소득세법 <strong>2023년 개정 근속연수공제 반영</strong></span>
+      </div>
+    </div>
+
+    <section class="calc" aria-label="퇴직금 계산기">
+
+      <!-- 입력 -->
+      <div class="panel">
+        <h2 class="panel-title">재직 기간 및 급여 입력</h2>
+
+        <!-- 날짜 선택 -->
+        <div class="date-row">
+          <div>
+            <label for="start-date">입사일</label>
+            <input type="date" id="start-date" value="2023-01-01">
+          </div>
+          <div>
+            <label for="end-date">퇴사일 (마지막 근무일)</label>
+            <input type="date" id="end-date" value="2026-01-01">
+          </div>
+        </div>
+
+        <!-- 빠른 근속기간 프리셋 -->
+        <div class="field" style="margin-bottom:18px;">
+          <div class="field-label">
+            <span>재직일수</span>
+            <span class="field-hint" id="working-days-hint">1,097일 (약 3년 0개월)</span>
+          </div>
+          <div class="chips" id="service-chips">
+            <button type="button" data-years="1">1년</button>
+            <button type="button" data-years="2">2년</button>
+            <button type="button" data-years="3" class="is-active">3년</button>
+            <button type="button" data-years="5">5년</button>
+            <button type="button" data-years="7">7년</button>
+            <button type="button" data-years="10">10년</button>
+          </div>
+        </div>
+
+        <!-- 3개월 기본급 -->
+        <div class="field">
+          <div class="field-label">
+            <label for="base-pay">퇴직 전 3개월 기본급 합계</label>
+            <span class="field-hint" id="base-pay-hint">900만 원 (월 300만)</span>
+          </div>
+          <div class="money-input">
+            <input type="text" id="base-pay" inputmode="numeric" value="9,000,000">
+            <span class="unit">원</span>
+          </div>
+        </div>
+
+        <!-- 상세 급여 옵션 -->
+        <div class="options" style="border-top:none; padding-top:0;">
+          <div>
+            <label for="allowance-pay">3개월간 기타수당 합계</label>
+            <input type="text" id="allowance-pay" inputmode="numeric" value="0">
+          </div>
+          <div>
+            <label for="annual-bonus">이전 1년간 상여금 총액</label>
+            <input type="text" id="annual-bonus" inputmode="numeric" value="0">
+          </div>
+          <div class="full">
+            <label for="annual-leave">이전 1년간 연차수당 총액</label>
+            <input type="text" id="annual-leave" inputmode="numeric" value="0">
+          </div>
+        </div>
+
+        <button type="button" class="btn-primary" id="calc-btn">퇴직금 계산하기</button>
+
+        <div class="notice-box" id="qualify-warning" style="display:none;">
+          ⚠️ 계속근로기간이 1년(365일) 미만이면 법정 퇴직금 지급 대상이 아닙니다.
+        </div>
+      </div>
+
+      <!-- 결과 -->
+      <div class="panel calc-result" id="result" aria-live="polite">
+        <p class="result-label">예상 세후 퇴직금 (통장 입금액)</p>
+        <p class="result-amount"><span id="r-net-sev">0</span><small>원</small></p>
+        <p class="result-caption">세전 <b id="r-gross-sev">0원</b>에서 세금 <b id="r-tax-sev">0원</b> 공제</p>
+
+        <!-- IRP 절세 박스 -->
+        <div class="irp-card">
+          <h4>💡 IRP(퇴직연금) 이전 시 절세 혜택</h4>
+          <p>
+            퇴직금을 IRP 계좌로 수령하고 연금으로 나누어 받으면 퇴직소득세의 30%인 <b id="r-irp-save">0원</b>을 아낄 수 있습니다. (10년 초과 수령 시 <span id="r-irp-save-40">0원</span> 감면)
+          </p>
+        </div>
+
+        <table class="breakdown">
+          <tbody>
+            <tr><th>총 계속근로일수</th><td id="r-days">0일</td></tr>
+            <tr><th>근속연수 (세법 기준)</th><td id="r-years">0년</td></tr>
+            <tr><th>1일 평균임금</th><td id="r-daily-wage">0원</td></tr>
+            <tr><th>세전 퇴직금 합계</th><td id="r-gross-table">0원</td></tr>
+            <tr><th>퇴직소득세<small>근속연수공제 적용</small></th><td id="r-itax">0원</td></tr>
+            <tr><th>지방소득세<small>소득세의 10%</small></th><td id="r-ltax">0원</td></tr>
+            <tr class="sum"><th>실제 공제 세금 합계</th><td id="r-tax-total">0원</td></tr>
+          </tbody>
+        </table>
+
+        <div class="annual">
+          <div>실효세율<b id="r-eff-rate">0.0%</b></div>
+          <div>IRP 연금 수령 시 세금<b id="r-irp-final" style="color:#15803D;">0원</b></div>
+        </div>
+
+        <div class="result-actions">
+          <button type="button" class="btn-ghost" id="copy-btn">결과 복사</button>
+          <button type="button" class="btn-ghost" id="share-btn">공유하기</button>
+        </div>
+
+        <p class="disclaimer">근로기준법 제34조 및 소득세법 기준 산출 추정치입니다. 회사별 단체협약 또는 취업규칙(누진제 등)에 따라 실제 퇴직금과 차이가 있을 수 있습니다.</p>
+      </div>
+    </section>
+
+    <div class="ad-area"></div>
+
+    <!-- 법정 퇴직금 기준 안내 -->
+    <section class="section" id="rules">
+      <h2 class="section-title">근로기준법상 퇴직금 지급 요건</h2>
+      <p class="section-desc">정규직뿐만 아니라 아르바이트, 계약직, 일용직도 법정 요건을 갖추면 100% 지급 대상입니다.</p>
+      <div class="article">
+        <div class="rate-grid">
+          <div class="rate-cell"><span>근속 요건</span><b>1년 이상</b><em>365일 이상 계속근로</em></div>
+          <div class="rate-cell"><span>근무 시간</span><b>주 15시간</b><em>4주 평균 1주 소정근로</em></div>
+          <div class="rate-cell"><span>지급 기한</span><b>14일 이내</b><em>퇴직일로부터 14일</em></div>
+          <div class="rate-cell"><span>연체 이자</span><b>연 20%</b><em>기한 경과 시 법정 이자</em></div>
+        </div>
+
+        <h3>퇴직금 계산 공식의 원리</h3>
+        <p>퇴직금은 <strong>「1일 평균임금 × 30일 × (계속근로일수 ÷ 365)」</strong> 공식으로 계산합니다. 즉, 1년을 일할 때마다 한 달 치 평균임금(30일분)이 퇴직금으로 적립되는 구조입니다.</p>
+
+        <h3>1일 평균임금에 들어가는 항목</h3>
+        <ul>
+          <li><strong>퇴직 전 3개월 기본급과 수당</strong>: 직전 3개월 동안 지급된 모든 근로의 대가가 포함됩니다.</li>
+          <li><strong>연간 상여금의 3/12</strong>: 1년 동안 받은 정기 상여금 총액의 4분의 1(3개월분)이 평균임금에 합산됩니다.</li>
+          <li><strong>미사용 연차유급휴가수당의 3/12</strong>: 전년도 출근율로 발생해 퇴직 전 지급받은 미사용 연차수당도 3/12만큼 포함됩니다.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- IRP 절세 가이드 -->
+    <section class="section" id="irp-guide">
+      <h2 class="section-title">퇴직연금 IRP 수령 시 절세 혜택 총정리</h2>
+      <p class="section-desc">퇴직금을 한 번에 일시금으로 찾으면 세금을 100% 다 떼이지만, IRP로 이전하면 세금을 크게 줄일 수 있습니다.</p>
+      <div class="article">
+        <h3>1. 퇴직소득세 30%~40% 감면</h3>
+        <p>퇴직금을 IRP 계좌에 넣어두고 만 55세 이후 연금으로 10년 이하 동안 수령하면 퇴직소득세의 30%를 감면(70%만 과세)받습니다. 10년을 초과하여 연금으로 수령하면 감면 폭이 40%로 확대되어 60%만 세금으로 냅니다.</p>
+
+        <h3>2. 과세이연(세금 납부 연기) 효과</h3>
+        <p>퇴직할 때 세금을 당장 떼지 않고 세전 퇴직금 전액이 IRP 계좌로 입금되므로, 그 세금만큼 원금이 더 커진 상태에서 예금이나 ETF 등에 굴려 복리 수익을 누릴 수 있습니다.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <h2 class="section-title">퇴직금 자주 묻는 질문</h2>
+      <div class="faq">
+        <details>
+          <summary>퇴직금은 퇴사 후 언제까지 들어와야 하나요?</summary>
+          <div class="answer">근로기준법 제36조에 따라 퇴직일로부터 14일 이내에 퇴직금 전액이 지급되어야 합니다. 당사자 간 합의가 없는 상태에서 14일을 넘기면 연 20%의 지연이자(근로기준법 제37조)가 부과됩니다.</div>
+        </details>
+        <details>
+          <summary>5인 미만 사업장이나 알바도 퇴직금을 받을 수 있나요?</summary>
+          <div class="answer">네, 받을 수 있습니다. 2013년 1월 1일부터 5인 미만 사업장도 100% 퇴직금 지급 의무가 적용되었습니다. 1년 이상 일하고 주당 15시간 이상 근무했다면 아르바이트라도 법정 퇴직금을 전액 요구할 수 있습니다.</div>
+        </details>
+        <details>
+          <summary>퇴직소득세는 왜 일반 근로소득세보다 세율이 낮나요?</summary>
+          <div class="answer">퇴직금은 여러 해 동안 일한 대가가 한 번에 지급되는 소득이기 때문에 일반 소득세율을 그대로 적용하면 세금 폭탄이 됩니다. 이를 막기 위해 세법에서는 '근속연수공제'와 '환산급여공제'를 적용하여 실효세율을 1%~5% 수준으로 매우 낮게 깎아줍니다.</div>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-links" aria-label="사이트 정보">
+        <a href="./">연봉 실수령액</a>
+        <a href="./severance.html">퇴직금 &amp; IRP</a>
+        <a href="./about.html">사이트 소개</a>
+        <a href="./privacy.html">개인정보처리방침</a>
+        <a href="./about.html#contact">문의</a>
+      </nav>
+      <p class="footer-note">데이터라이터는 급여·세금처럼 자주 찾지만 계산이 번거로운 숫자를 쉽게 확인할 수 있도록 만든 계산기 모음입니다.<br>© 2026 datawriter.co.kr</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="./js/severanceCalculator.js"></script>
+  <script src="./js/severanceApp.js"></script>
+</body>
+</html>
