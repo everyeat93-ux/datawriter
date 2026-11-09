@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <title>연봉 실수령액 계산기 2026 | 4대보험·소득세 공제 후 월급 계산 - 데이터라이터</title>
+  <meta name="description" content="2026년 국민연금 4.75%, 건강보험 3.595% 등 바뀐 4대보험 요율을 반영한 연봉 실수령액 계산기. 비과세 식대, 부양가족, 퇴직금 포함 여부까지 넣고 세후 월급을 바로 확인하세요.">
+  <link rel="canonical" href="https://www.datawriter.co.kr/">
+  <meta name="robots" content="index, follow, max-snippet:-1">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="데이터라이터">
+  <meta property="og:title" content="연봉 실수령액 계산기 2026 - 데이터라이터">
+  <meta property="og:description" content="바뀐 2026년 4대보험 요율 반영. 내 연봉의 세후 월급을 바로 계산해 보세요.">
+  <meta property="og:url" content="https://www.datawriter.co.kr/">
+  <meta property="og:image" content="https://www.datawriter.co.kr/assets/icon.svg">
+  <meta property="og:locale" content="ko_KR">
+
+  <!-- Google AdSense (자동 광고) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5159285704643995" crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "연봉 실수령액 계산기 2026",
+        "url": "https://www.datawriter.co.kr/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "inLanguage": "ko-KR",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "식대 비과세는 얼마까지 인정되나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "근로자 식대는 월 20만 원까지 비과세입니다. 비과세 금액은 소득세와 4대보험 산정 기준에서 빠지기 때문에 같은 연봉이라도 실수령액이 늘어납니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "퇴직금 포함 연봉은 어떻게 계산하나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "퇴직금 포함 연봉은 연봉을 13으로 나눈 금액이 월 급여가 됩니다. 나머지 1/13은 퇴직금으로 적립되므로, 퇴직금 별도 계약보다 매달 받는 금액이 약 7.7% 적습니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "계산 결과와 실제 급여명세서가 다른 이유는 무엇인가요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "회사별 비과세 수당 구성, 상여금 지급 방식, 보험료 정산 시점, 원천징수 비율 선택 등에 따라 수천 원에서 수만 원 정도 차이가 날 수 있습니다." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="./assets/icon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./" class="logo" aria-label="데이터라이터 홈">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 12V7M8 12V4M13 12V9" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        데이터라이터
+      </a>
+      <nav class="gnb" aria-label="주요 메뉴">
+        <a href="./" class="is-active">연봉 실수령액</a>
+        <a href="#table">연봉별 실수령액 표</a>
+        <a href="#rates">2026 4대보험 요율</a>
+        <a href="#faq">자주 묻는 질문</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="page-head">
+      <p class="breadcrumb">홈 &rsaquo; 급여·세금</p>
+      <h1 class="page-title">연봉 실수령액 계산기</h1>
+      <p class="page-lead">연봉이나 월급을 입력하면 4대보험과 소득세를 뺀 실제 입금액을 계산합니다. 2026년 바뀐 국민연금·건강보험 요율이 반영되어 있습니다.</p>
+      <div class="meta-line">
+        <span>기준 <strong>2026년 요율</strong></span>
+        <span>최종 업데이트 <strong>2026.11.09</strong></span>
+      </div>
+    </div>
+
+    <section class="calc" aria-label="연봉 실수령액 계산기">
+
+      <!-- 입력 -->
+      <div class="panel">
+        <div class="segment" role="tablist">
+          <button type="button" class="is-active" id="mode-annual" role="tab" aria-selected="true">연봉으로 계산</button>
+          <button type="button" id="mode-monthly" role="tab" aria-selected="false">월급으로 계산</button>
+        </div>
+
+        <div class="field">
+          <div class="field-label">
+            <label for="salary" id="salary-label">연봉 (세전)</label>
+            <span class="field-hint" id="salary-hint">5,000만 원</span>
+          </div>
+          <div class="money-input">
+            <input type="text" id="salary" inputmode="numeric" value="50,000,000" autocomplete="off">
+            <span class="unit">원</span>
+          </div>
+          <div class="chips" id="chips">
+            <button type="button" data-value="30000000">3,000만</button>
+            <button type="button" data-value="40000000">4,000만</button>
+            <button type="button" data-value="50000000" class="is-active">5,000만</button>
+            <button type="button" data-value="60000000">6,000만</button>
+            <button type="button" data-value="70000000">7,000만</button>
+            <button type="button" data-value="80000000">8,000만</button>
+            <button type="button" data-value="100000000">1억</button>
+          </div>
+        </div>
+
+        <div class="options">
+          <div>
+            <label for="nontax">월 비과세액</label>
+            <input type="text" id="nontax" inputmode="numeric" value="200,000">
+          </div>
+          <div>
+            <label for="severance">퇴직금</label>
+            <select id="severance">
+              <option value="excluded" selected>별도</option>
+              <option value="included">연봉에 포함</option>
+            </select>
+          </div>
+          <div>
+            <label for="dependents">부양가족 (본인 포함)</label>
+            <select id="dependents">
+              <option value="1" selected>1명</option>
+              <option value="2">2명</option>
+              <option value="3">3명</option>
+              <option value="4">4명</option>
+              <option value="5">5명</option>
+            </select>
+          </div>
+          <div>
+            <label for="children">8~20세 자녀</label>
+            <select id="children">
+              <option value="0" selected>없음</option>
+              <option value="1">1명</option>
+              <option value="2">2명</option>
+              <option value="3">3명 이상</option>
+            </select>
+          </div>
+          <div class="full">
+            <label for="taxrate">소득세 원천징수 비율</label>
+            <select id="taxrate">
+              <option value="80">80% (매달 덜 떼고 연말정산 때 정산)</option>
+              <option value="100" selected>100% (기본)</option>
+              <option value="120">120% (매달 더 떼고 연말정산 때 환급)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="button" class="btn-primary" id="calc-btn">계산하기</button>
+      </div>
+
+      <!-- 결과 -->
+      <div class="panel calc-result" id="result" aria-live="polite">
+        <p class="result-label">예상 월 실수령액</p>
+        <p class="result-amount"><span id="r-net">0</span><small>원</small></p>
+        <p class="result-caption">세전 월급 <b id="r-gross">0원</b>에서 <b id="r-ded">0원</b> 공제</p>
+
+        <div class="stack" aria-hidden="true">
+          <span class="s-net" id="bar-net"></span>
+          <span class="s-ins" id="bar-ins"></span>
+          <span class="s-tax" id="bar-tax"></span>
+        </div>
+        <div class="legend">
+          <span><i style="background:var(--c-net)"></i>실수령 <span id="p-net" class="num">0</span>%</span>
+          <span><i style="background:var(--c-ins)"></i>4대보험 <span id="p-ins" class="num">0</span>%</span>
+          <span><i style="background:var(--c-tax)"></i>세금 <span id="p-tax" class="num">0</span>%</span>
+        </div>
+
+        <table class="breakdown">
+          <tbody>
+            <tr><th>국민연금<small>4.75%</small></th><td id="r-pension">0원</td></tr>
+            <tr><th>건강보험<small>3.595%</small></th><td id="r-health">0원</td></tr>
+            <tr><th>장기요양보험<small>건강보험료의 13.14%</small></th><td id="r-care">0원</td></tr>
+            <tr><th>고용보험<small>0.9%</small></th><td id="r-employ">0원</td></tr>
+            <tr><th>근로소득세</th><td id="r-itax">0원</td></tr>
+            <tr><th>지방소득세<small>소득세의 10%</small></th><td id="r-ltax">0원</td></tr>
+            <tr class="sum"><th>공제 합계</th><td id="r-total">0원</td></tr>
+          </tbody>
+        </table>
+
+        <div class="annual">
+          <div>연봉 (세전)<b id="r-annual-gross">0원</b></div>
+          <div>연간 실수령액<b id="r-annual-net">0원</b></div>
+        </div>
+
+        <div class="result-actions">
+          <button type="button" class="btn-ghost" id="copy-btn">결과 복사</button>
+          <button type="button" class="btn-ghost" id="share-btn">공유하기</button>
+        </div>
+
+        <p class="disclaimer">국세청 근로소득 간이세액표의 산출 방식을 따른 추정치입니다. 회사의 수당 구성이나 정산 방식에 따라 실제 급여명세서와 차이가 있을 수 있습니다.</p>
+      </div>
+    </section>
+
+    <div class="ad-area"></div>
+
+    <!-- 연봉별 표 -->
+    <section class="section" id="table">
+      <h2 class="section-title">2026 연봉별 실수령액 표</h2>
+      <p class="section-desc">본인 1명, 비과세 식대 월 20만 원, 퇴직금 별도 기준입니다. 표의 금액은 위 계산기와 같은 방식으로 산출했습니다.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>연봉</th>
+              <th>세전 월급</th>
+              <th>월 실수령액</th>
+              <th>4대보험</th>
+              <th>소득세·지방세</th>
+              <th>공제 합계</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 요율 -->
+    <section class="section" id="rates">
+      <h2 class="section-title">2026년 4대보험 요율, 무엇이 바뀌었나</h2>
+      <p class="section-desc">근로자 부담분 기준. 회사도 같은 비율(고용보험은 규모별 추가)을 부담합니다.</p>
+      <div class="article">
+        <div class="rate-grid">
+          <div class="rate-cell"><span>국민연금</span><b>4.75%</b><em>2025년 4.5%</em></div>
+          <div class="rate-cell"><span>건강보험</span><b>3.595%</b><em>2025년 3.545%</em></div>
+          <div class="rate-cell"><span>장기요양보험</span><b>13.14%</b><em>건강보험료 대비</em></div>
+          <div class="rate-cell"><span>고용보험</span><b>0.9%</b><em>변동 없음</em></div>
+        </div>
+
+        <h3>국민연금: 18년 만에 보험료율 인상</h3>
+        <p>2025년 3월 국민연금법 개정으로 보험료율이 9%에서 매년 0.5%포인트씩 올라 2033년 13%가 됩니다. 2026년은 그 첫해로 총 9.5%, 근로자 부담은 4.75%입니다. 월 소득 500만 원이라면 국민연금이 월 22만 5천 원에서 23만 7,500원으로 약 1만 2,500원 늘어납니다.</p>
+        <p>보험료를 매기는 기준소득월액에는 상한과 하한이 있습니다. 상한을 넘는 소득에는 보험료가 붙지 않기 때문에 고연봉자는 연금 부담 비중이 오히려 낮아집니다. 상·하한액은 매년 7월 조정됩니다.</p>
+
+        <h3>건강보험: 7.09% → 7.19%</h3>
+        <p>건강보험료율은 2년 동결 후 2026년 7.19%로 올랐습니다. 근로자와 회사가 절반씩 내므로 근로자 부담은 3.595%입니다. 장기요양보험료는 건강보험료에 일정 비율을 곱해 걷으며, 2026년에는 소득 대비 0.9448%(건강보험료의 약 13.14%) 수준입니다.</p>
+
+        <h3>실수령액에 미치는 영향</h3>
+        <p>요율 인상분만 놓고 보면 연봉 5,000만 원 직장인의 4대보험 부담은 월 1만 원 남짓 늘어납니다. 대신 국민연금과 건강보험료는 연말정산 때 전액 소득공제되므로 소득세가 소폭 줄어 실제 체감 감소폭은 이보다 조금 작습니다.</p>
+      </div>
+    </section>
+
+    <div class="ad-area"></div>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <h2 class="section-title">자주 묻는 질문</h2>
+      <div class="faq">
+        <details>
+          <summary>식대 비과세는 얼마까지 인정되나요?</summary>
+          <div class="answer">월 20만 원까지입니다. 비과세 금액은 소득세뿐 아니라 4대보험 산정 기준에서도 빠집니다. 회사에서 식대를 따로 책정하지 않았다면 계산기의 '월 비과세액'을 0으로 바꿔 보세요.</div>
+        </details>
+        <details>
+          <summary>퇴직금 포함 연봉은 왜 월급이 적나요?</summary>
+          <div class="answer">퇴직금 포함 계약은 연봉을 13으로 나눠 12개월은 급여로, 1개월분은 퇴직금으로 돌립니다. 같은 연봉 5,000만 원이라도 월 세전 급여가 약 417만 원에서 385만 원으로 줄어듭니다.</div>
+        </details>
+        <details>
+          <summary>원천징수 비율 80%, 120%는 언제 고르나요?</summary>
+          <div class="answer">매달 떼는 소득세를 기본 세액의 80%, 100%, 120% 중에서 고를 수 있습니다. 80%는 당장 월급이 늘지만 연말정산 때 더 낼 가능성이 커지고, 120%는 그 반대입니다. 총 세금은 같고 납부 시점만 달라집니다.</div>
+        </details>
+        <details>
+          <summary>계산 결과가 급여명세서와 조금 다릅니다.</summary>
+          <div class="answer">상여금 지급 방식, 회사가 정한 비과세 수당(차량유지비, 보육수당 등), 건강보험 정산분, 보험료 원 단위 절사 방식 때문에 차이가 생길 수 있습니다. 대략적인 수준을 파악하는 용도로 활용해 주세요.</div>
+        </details>
+        <details>
+          <summary>부양가족은 어떻게 세나요?</summary>
+          <div class="answer">본인을 포함해 연간 소득금액 100만 원 이하인 배우자, 만 20세 이하 자녀, 만 60세 이상 부모 등을 셉니다. 부양가족이 많을수록 기본공제가 커져 매달 떼는 소득세가 줄어듭니다.</div>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-links" aria-label="사이트 정보">
+        <a href="./about.html">사이트 소개</a>
+        <a href="./privacy.html">개인정보처리방침</a>
+        <a href="./about.html#contact">문의</a>
+      </nav>
+      <p class="footer-note">데이터라이터는 급여·세금처럼 자주 찾지만 계산이 번거로운 숫자를 쉽게 확인할 수 있도록 만든 계산기 모음입니다. 계산 결과는 참고용이며 법적 효력이 없습니다.<br>© 2026 datawriter.co.kr</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="./js/salaryCalculator.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
