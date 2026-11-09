@@ -474,8 +474,103 @@ a { color: inherit; }
   line-height: 1.55;
 }
 
-/* ---------- Ad area (auto ads fill naturally; this keeps spacing clean) ---------- */
-.ad-area { margin: 32px 0; min-height: 0; }
+/* ---------- Ad area ---------- */
+.ad-area {
+  margin: 32px 0;
+  min-height: 100px;
+  background: var(--surface);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------- Tool Switcher Tabs ---------- */
+.tool-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tool-tabs::-webkit-scrollbar { display: none; }
+
+.tool-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  color: var(--ink-3);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all .15s ease;
+  white-space: nowrap;
+}
+.tool-tab:hover {
+  border-color: var(--line-strong);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+.tool-tab.is-active {
+  background: var(--surface);
+  border-color: var(--brand);
+  color: var(--brand);
+  box-shadow: 0 2px 8px rgba(11, 92, 213, 0.12);
+  font-weight: 700;
+}
+.tool-tab-icon { font-size: 1.15rem; }
+.tool-tab-badge {
+  background: #E5484D;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 7px;
+  border-radius: 999px;
+  line-height: 1;
+}
+
+/* ---------- Cross Promotion Card ---------- */
+.cross-promo-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  background: var(--brand-soft);
+  border: 1px solid rgba(11, 92, 213, 0.2);
+  border-radius: 10px;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background .15s, border-color .15s;
+}
+.cross-promo-card:hover {
+  background: #E4EEFB;
+  border-color: var(--brand);
+}
+.cross-promo-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+.cross-promo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.cross-promo-text strong {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.cross-promo-text span {
+  font-size: 0.82rem;
+  color: var(--brand);
+  font-weight: 600;
+}
 
 /* ---------- Articles / content sections ---------- */
 .section {
