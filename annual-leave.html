@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <title>미사용 연차수당 계산기 2026 | 근로기준법 통상임금 기준 모의계산 - 데이터라이터</title>
+  <meta name="description" content="2026년 최신 근로기준법 기준 통상시급과 1일 통상임금을 산출하여 미사용 연차유급휴가 수당을 정확하게 계산합니다. 월급 및 연봉 기준 연차수당 세전 금액과 실수령액을 즉시 확인하세요.">
+  <link rel="canonical" href="https://www.datawriter.co.kr/annual-leave.html">
+  <meta name="robots" content="index, follow, max-snippet:-1">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="데이터라이터">
+  <meta property="og:title" content="미사용 연차수당 계산기 2026 - 데이터라이터">
+  <meta property="og:description" content="남은 연차 돈으로 얼마나 받을 수 있을까? 통상시급 기준 미사용 연차수당 즉시 계산">
+  <meta property="og:url" content="https://www.datawriter.co.kr/annual-leave.html">
+  <meta property="og:image" content="https://www.datawriter.co.kr/assets/icon.svg">
+  <meta property="og:locale" content="ko_KR">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5159285704643995" crossorigin="anonymous"></script>
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "미사용 연차수당 계산기 2026",
+        "url": "https://www.datawriter.co.kr/annual-leave.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "inLanguage": "ko-KR",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "연차수당은 어떻게 계산하나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "연차수당은 '1일 통상임금 × 미사용 연차일수'로 계산합니다. 주 40시간 근무자의 경우 월 통상임금을 209시간으로 나눈 통상시급에 8시간을 곱해 1일 통상임금을 구합니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "퇴사 시 남은 연차는 무조건 돈으로 받을 수 있나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "네. 퇴직으로 인해 사용하지 못한 연차유급휴가는 회사의 사용촉진제도 시행 여부와 무관하게 전액 미사용 연차수당으로 정산하여 지급받을 수 있습니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "연차수당에도 세금을 떼나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "네, 연차수당은 근로소득에 해당하므로 정산월 급여에 합산되어 근로소득세와 지방소득세가 원천징수됩니다." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="./assets/icon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .chips-row {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+    .chip-btn {
+      background: var(--surface-sub);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--ink-2);
+      cursor: pointer;
+      transition: all .15s ease;
+    }
+    .chip-btn:hover {
+      background: var(--surface);
+      border-color: var(--brand);
+      color: var(--brand);
+    }
+    .info-card {
+      margin-top: 18px;
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .info-card h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #15803D;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    .info-card p {
+      font-size: 0.85rem;
+      color: #166534;
+      line-height: 1.55;
+    }
+    .info-card b {
+      color: #14532D;
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./" class="logo" aria-label="데이터라이터 홈">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 12V7M8 12V4M13 12V9" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        데이터라이터
+      </a>
+      <nav class="gnb" aria-label="주요 메뉴">
+        <a href="./">연봉 실수령액</a>
+        <a href="./severance.html">퇴직금 &amp; IRP</a>
+        <a href="./unemployment.html">실업급여</a>
+        <a href="./annual-leave.html" class="is-active">연차수당</a>
+        <a href="./holiday-pay.html">주휴수당</a>
+        <a href="./savings-interest.html">예적금·도약계좌</a>
+        <a href="./tax-settlement.html">연말정산 가이드</a>
+        <a href="#rules">발생 기준</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="page-head">
+      <p class="breadcrumb">홈 &rsaquo; 급여·세금</p>
+      <h1 class="page-title">미사용 연차수당 계산기 2026</h1>
+      <p class="page-lead">근로기준법 기준 통상시급과 1일 통상임금을 산출하여 쓰지 못한 연차휴가의 정산 수당을 계산합니다. 퇴사 또는 연말 정산 시 받을 수 있는 세전·세후 예상 수령액을 즉시 확인하세요.</p>
+      <div class="meta-line">
+        <span>근거 <strong>근로기준법 제60조·제61조</strong></span>
+        <span>기준 <strong>주 40시간(월 209시간) 통상임금 산출</strong></span>
+      </div>
+    </div>
+
+    <!-- 도구 탭 바 -->
+    <div class="tool-tabs" role="tablist" aria-label="계산기 선택">
+      <a href="./" class="tool-tab" role="tab" aria-selected="false">
+        <span class="tool-tab-icon">💰</span>
+        <span>2026 연봉 실수령액</span>
+      </a>
+      <a href="./severance.html" class="tool-tab" role="tab" aria-selected="false">
+        <span class="tool-tab-icon">💼</span>
+        <span>퇴직금 &amp; IRP 절세</span>
+        <span class="tool-tab-badge">인기</span>
+      </a>
+      <a href="./unemployment.html" class="tool-tab" role="tab" aria-selected="false">
+        <span class="tool-tab-icon">🛡️</span>
+        <span>실업급여 모의계산</span>
+      </a>
+      <a href="./annual-leave.html" class="tool-tab is-active" role="tab" aria-selected="true">
+        <span class="tool-tab-icon">🏖️</span>
+        <span>미사용 연차수당</span>
+        <span class="tool-tab-badge">신규</span>
+      </a>
+      <a href="./holiday-pay.html" class="tool-tab" role="tab" aria-selected="false">
+        <span class="tool-tab-icon">⏰</span>
+        <span>주휴수당 &amp; 알바</span>
+      </a>
+      <a href="./savings-interest.html" class="tool-tab" role="tab" aria-selected="false">
+        <span class="tool-tab-icon">📈</span>
+        <span>예적금·청년도약</span>
+      </a>
+      <a href="./tax-settlement.html" class="tool-tab" role="tab" aria-selected="false">
+        <span class="tool-tab-icon">📑</span>
+        <span>연말정산 환급 가이드</span>
+      </a>
+    </div>
+
+    <section class="calc" aria-label="연차수당 계산기">
+
+      <!-- 입력 패널 -->
+      <div class="panel">
+        <h2 class="panel-title">급여 및 미사용 연차 입력</h2>
+
+        <!-- 급여 유형 선택 -->
+        <div class="form-group">
+          <label class="form-label">급여 기준</label>
+          <div class="radio-group" role="radiogroup">
+            <label class="radio-label">
+              <input type="radio" name="salary_type" id="salary-monthly" value="monthly" checked>
+              <span>월 기본급 기준</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="salary_type" id="salary-annual" value="annual">
+              <span>연봉 기준</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 월 기본급 입력 -->
+        <div class="form-group" id="group-monthly">
+          <label for="monthly-base" class="form-label">
+            <span>월 기본급</span>
+            <span class="form-sublabel">기본급 및 정기적 고정급여</span>
+          </label>
+          <div class="input-wrap">
+            <input type="text" id="monthly-base" inputmode="numeric" value="3,000,000" aria-describedby="monthly-base-unit">
+            <span class="input-unit" id="monthly-base-unit">원</span>
+          </div>
+        </div>
+
+        <!-- 연봉 입력 -->
+        <div class="form-group" id="group-annual" style="display: none;">
+          <label for="annual-salary" class="form-label">
+            <span>연봉 (세전)</span>
+            <span class="form-sublabel">퇴직금 제외 12분할 기준</span>
+          </label>
+          <div class="input-wrap">
+            <input type="text" id="annual-salary" inputmode="numeric" value="36,000,000" aria-describedby="annual-salary-unit">
+            <span class="input-unit" id="annual-salary-unit">원</span>
+          </div>
+        </div>
+
+        <!-- 고정 수당 입력 -->
+        <div class="form-group">
+          <label for="fixed-allowances" class="form-label">
+            <span>월 고정 수당 (선택)</span>
+            <span class="form-sublabel">직책수당, 면허수당 등 매월 정기·일률 지급 수당</span>
+          </label>
+          <div class="input-wrap">
+            <input type="text" id="fixed-allowances" inputmode="numeric" value="0" aria-describedby="fixed-allowances-unit">
+            <span class="input-unit" id="fixed-allowances-unit">원</span>
+          </div>
+        </div>
+
+        <!-- 근무시간 -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="weekly-hours" class="form-label">주 소정근로시간</label>
+            <div class="input-wrap">
+              <input type="number" id="weekly-hours" value="40" min="15" max="52" step="1">
+              <span class="input-unit">시간</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="daily-hours" class="form-label">1일 근로시간</label>
+            <div class="input-wrap">
+              <input type="number" id="daily-hours" value="8" min="1" max="12" step="0.5">
+              <span class="input-unit">시간</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 미사용 연차 일수 -->
+        <div class="form-group">
+          <label for="unused-days" class="form-label">
+            <span>남은 미사용 연차</span>
+            <span class="form-sublabel">소수점(0.5일 반차) 입력 가능</span>
+          </label>
+          <div class="input-wrap">
+            <input type="number" id="unused-days" value="5" min="0" max="40" step="0.5">
+            <span class="input-unit">일</span>
+          </div>
+          <div class="chips-row">
+            <button type="button" class="chip-btn" data-adjust-days="0.5">+0.5일(반차)</button>
+            <button type="button" class="chip-btn" data-adjust-days="1">+1일</button>
+            <button type="button" class="chip-btn" data-adjust-days="3">+3일</button>
+            <button type="button" class="chip-btn" data-adjust-days="5">+5일</button>
+            <button type="button" class="chip-btn" data-adjust-days="-1">-1일</button>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h4>💡 연차수당 통상임금 인정 기준</h4>
+          <p>연차수당의 기초가 되는 <b>통상임금</b>은 소정근로의 대가로 <b>정기적·일률적·고정적</b>으로 지급되는 급여입니다. 실적에 따른 인센티브나 야근수당은 제외되며, 매달 고정 지급되는 직책수당·직급수당 등은 포함됩니다.</p>
+        </div>
+
+      </div>
+
+      <!-- 결과 패널 (Sticky) -->
+      <aside class="panel panel-result" aria-label="연차수당 계산 결과">
+        <h2 class="panel-title">예상 연차수당 정산액</h2>
+
+        <div class="result-hero">
+          <span class="result-hero-label">총 미사용 연차수당 (세전)</span>
+          <strong class="result-hero-value" id="result-total-gross">0원</strong>
+          <span class="result-hero-sub">미사용 <span id="result-days">5일</span> 기준 정산금</span>
+        </div>
+
+        <div class="result-breakdown">
+          <div class="breakdown-row highlight">
+            <span>예상 실수령액 (세후)</span>
+            <strong id="result-estimated-net">0원</strong>
+          </div>
+          <div class="breakdown-row sub">
+            <span>예상 공제 세금 (약 9.9%)</span>
+            <span id="result-tax">0원</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="breakdown-row">
+            <span>1일 통상임금</span>
+            <span id="result-daily-wage">0원</span>
+          </div>
+          <div class="breakdown-row">
+            <span>통상시급</span>
+            <span id="result-hourly-wage">0원</span>
+          </div>
+          <div class="breakdown-row">
+            <span>월 통상임금</span>
+            <span id="result-monthly-wage">0원</span>
+          </div>
+          <div class="breakdown-row">
+            <span>월 소정근로시간</span>
+            <span id="result-monthly-hours">209시간</span>
+          </div>
+        </div>
+
+        <div class="result-actions">
+          <button type="button" class="btn btn-primary" id="copy-btn">결과 복사하기</button>
+        </div>
+
+        <!-- Google AdSense 결과 하단 배너 (골든 슬롯) -->
+        <div class="ad-slot-box" style="margin-top: 20px; text-align: center; min-height: 250px;">
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-5159285704643995"
+               data-ad-slot="5962808422"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>
+               (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+
+        <!-- 크로스 프로모션 카드 -->
+        <a href="./severance.html" class="cross-promo-card">
+          <span class="cross-promo-icon">💼</span>
+          <div class="cross-promo-body">
+            <strong>퇴사 예정이신가요?</strong>
+            <span>연차수당과 함께 꼭 받아야 할 법정 퇴직금 &amp; IRP 절세액도 지금 계산해 보세요.</span>
+          </div>
+          <span class="cross-promo-arrow" aria-hidden="true">&rsaquo;</span>
+        </a>
+
+        <a href="./unemployment.html" class="cross-promo-card" style="margin-top: 10px;">
+          <span class="cross-promo-icon">🛡️</span>
+          <div class="cross-promo-body">
+            <strong>퇴직 후 실업급여 모의계산</strong>
+            <span>2026년 상한액 66,000원 기준 최대 270일 구직급여 수급액을 확인해 보세요.</span>
+          </div>
+          <span class="cross-promo-arrow" aria-hidden="true">&rsaquo;</span>
+        </a>
+
+      </aside>
+
+    </section>
+
+    <!-- 연차 발생 기준 가이드 -->
+    <section class="article" id="rules">
+      <h2 class="section-title">근로기준법상 연차휴가 발생 기준 (15일~25일)</h2>
+      <p class="section-lead">연차휴가는 재직 기간과 출근율에 따라 법적으로 의무 부여됩니다.</p>
+
+      <div class="table-wrap">
+        <table class="rate-table">
+          <thead>
+            <tr>
+              <th scope="col">재직 기간</th>
+              <th scope="col">발생 연차휴가</th>
+              <th scope="col">산정 및 부여 기준</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1년 미만</strong> (신입)</td>
+              <td><strong>최대 11일</strong></td>
+              <td>1개월 개근 시 익월에 1일씩 유급휴가 발생 (입사 후 1년 내 미사용 시 소멸)</td>
+            </tr>
+            <tr>
+              <td><strong>1년 이상</strong></td>
+              <td><strong>15일</strong></td>
+              <td>전년도 80% 이상 출근 시 기본 15일 부여</td>
+            </tr>
+            <tr>
+              <td><strong>3년 이상</strong></td>
+              <td><strong>16일</strong></td>
+              <td>기본 15일 + 3년차부터 2년마다 1일씩 가산</td>
+            </tr>
+            <tr>
+              <td><strong>5년 이상</strong></td>
+              <td><strong>17일</strong></td>
+              <td>기본 15일 + 가산 2일</td>
+            </tr>
+            <tr>
+              <td><strong>7년 이상</strong></td>
+              <td><strong>18일</strong></td>
+              <td>기본 15일 + 가산 3일</td>
+            </tr>
+            <tr>
+              <td><strong>21년 이상 (상한)</strong></td>
+              <td><strong>최대 25일</strong></td>
+              <td>근로기준법상 연차휴가 일수의 법정 상한선</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="article" id="faq">
+      <h2 class="section-title">연차수당 자주 묻는 질문</h2>
+      <div class="faq">
+        <details>
+          <summary>퇴직할 때 남은 연차는 회사가 거부할 수 있나요?</summary>
+          <div class="answer">
+            거부할 수 없습니다. 근로기준법상 퇴직으로 인해 더 이상 사용할 수 없게 된 연차유급휴가는 전액 미사용 연차수당으로 정산하여 퇴직일로부터 14일 이내에 지급해야 합니다. 회사가 연차사용촉진제도를 실시했더라도 <strong>퇴직으로 인해 소멸된 연차는 반드시 현금 보상</strong>해야 합니다.
+          </div>
+        </details>
+        <details>
+          <summary>월 소정근로시간 209시간은 어떻게 계산된 숫자인가요?</summary>
+          <div class="answer">
+            주 40시간 근로자의 경우, 주휴시간(유급휴일 8시간)을 더해 1주에 유급으로 인정되는 시간은 48시간입니다. 1년 365일을 7일로 나누고 12개월로 나누면 1달 평균 4.345주가 되며, <code>48시간 × 4.345주 = 약 208.57시간</code>으로 원단위를 올림하여 법정 209시간이 됩니다.
+          </div>
+        </details>
+        <details>
+          <summary>연차 사용촉진제도란 무엇인가요?</summary>
+          <div class="answer">
+            회사가 근로기준법 제61조에 따라 연차 소멸 6개월 전(1차)과 2개월 전(2차)에 서면으로 잔여 연차 사용을 촉진하고 지정 통보했음에도 불구하고 근로자가 휴가를 사용하지 않은 경우, 회사의 미사용 연차수당 지급 의무가 면제되는 제도입니다. 단, 회사의 촉진 절차가 서면이 아니거나 기한을 어긴 경우엔 무효이며 수당을 지급해야 합니다.
+          </div>
+        </details>
+        <details>
+          <summary>연차수당을 퇴직금 산정 시 포함하나요?</summary>
+          <div class="answer">
+            퇴직 전 이미 발생하여 지급받은 연차수당(전전년도 출근율로 전년도에 발생한 연차 중 미사용 수당)은 3/12를 곱하여 퇴직금 산정 기준인 평균임금에 산입됩니다. 반면, 퇴직으로 인해 비로소 발생하는 연차수당은 평균임금에는 들어가지 않고 별도로 수령합니다.
+          </div>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-links" aria-label="사이트 정보">
+        <a href="./">연봉 실수령액</a>
+        <a href="./severance.html">퇴직금 &amp; IRP</a>
+        <a href="./unemployment.html">실업급여 계산기</a>
+        <a href="./annual-leave.html">연차수당 계산기</a>
+        <a href="./tax-settlement.html">연말정산 가이드</a>
+        <a href="./about.html">사이트 소개</a>
+        <a href="./privacy.html">개인정보처리방침</a>
+        <a href="./terms.html">이용약관</a>
+        <a href="./about.html#contact">문의</a>
+      </nav>
+      <p class="footer-note">데이터라이터는 급여·세금처럼 자주 찾지만 계산이 번거로운 숫자를 쉽게 확인할 수 있도록 만든 계산기 모음입니다.<br>© 2026 datawriter.co.kr</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="./js/annualLeaveCalculator.js"></script>
+  <script src="./js/annualLeaveApp.js"></script>
+</body>
+</html>

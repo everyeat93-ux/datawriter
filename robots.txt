@@ -13,4 +13,7 @@ Allow: /
 User-agent: Daumoa
 Allow: /
 
+User-agent: bingbot
+Allow: /
+
 Sitemap: https://www.datawriter.co.kr/sitemap.xml
