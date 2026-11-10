@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `예상 퇴직금 (세전): ${rGrossSev.textContent}\n` +
       `공제 세금: ${rTaxSev.textContent} (실효세율 ${rEffRate.textContent})\n` +
       `통장 입금액 (세후): ${rNetSev.textContent}원\n` +
-      `💡 IRP로 연금 수령 시 세금 ${rIrpSave.textContent} 감면!\n${location.origin}${location.pathname}`;
+      `[절세 팁] IRP로 연금 수령 시 세금 ${rIrpSave.textContent} 감면!\n${location.origin}${location.pathname}`;
   }
 
   function toast(msg) {

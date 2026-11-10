@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `1일 구직급여액: ${rDaily.textContent}\n` +
       `월 예상액: ${rMonthly.textContent}\n` +
       `총 예상 수급액: ${rTotalBenefit.textContent}원\n` +
-      `💡 조기재취업수당: 최대 ${rEarly.textContent}\n${location.origin}${location.pathname}`;
+      `[수령 팁] 조기재취업수당: 최대 ${rEarly.textContent}\n${location.origin}${location.pathname}`;
   }
 
   function toast(msg) {
